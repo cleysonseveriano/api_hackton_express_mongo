@@ -46,6 +46,6 @@ app.post('/', async (req,res) => {
 const PORT = 5000;
 
 app.listen(PORT, () => {
-    mongoose.connect(DB_MONGO_PASSWORD);
-    console.log('App is running...')
+    mongoose.connect(process.env.DB_MONGO_PASSWORD);
+    console.log('App is running...', process.env.DB_MONGO_PASSWORD)
 });

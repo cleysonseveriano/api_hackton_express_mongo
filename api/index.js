@@ -1,5 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
+mongoose.connect(process.env.DB_MONGO_PASSWORD);
+console.log('App is running...', process.env.DB_MONGO_PASSWORD)
 
 const app = express();
 app.use(express.json());
@@ -43,9 +45,8 @@ app.post('/', async (req,res) => {
     res.send(usuario);
 });
 
-const PORT = 5000;
+module.exports = app;
 
-app.listen(PORT, () => {
-    mongoose.connect(process.env.DB_MONGO_PASSWORD);
-    console.log('App is running...', process.env.DB_MONGO_PASSWORD)
-});
+// app.listen(() => {
+
+// });

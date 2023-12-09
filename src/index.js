@@ -45,8 +45,7 @@ app.post('/', async (req,res) => {
 
 const PORT = 5000;
 
-const DB_PASSWORD = '';
 app.listen(PORT, () => {
-    mongoose.connect(`mongodb+srv://cleysontab:${DB_PASSWORD}@appwebhackaton.sswddix.mongodb.net/?retryWrites=true&w=majority`);
+    mongoose.connect(DB_MONGO_PASSWORD);
     console.log('App is running...')
 });
